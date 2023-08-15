@@ -1,17 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="Description" content="Home page of Bingster a web development and data science blog">
-    <meta name="theme-color" content="#000000" />
-    <title>Bingster</title>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-    <link rel="shortcut icon" href="./img/favicon.ico">
-    <link rel="stylesheet" href="/css/app.css">
-<style>
 @import url('https://fonts.googleapis.com/css?family=Open+Sans|Saira+Extra+Condensed');
 html,
 body {
@@ -30,6 +16,8 @@ ul {
 body {
     background: linear-gradient(90deg, #080808 0%, #343434 30%, #262627 67%, #080808 100%);
     background-size: 100%;
+  -webkit-backdrop-filter: blur(2px) saturate(50%);
+  backdrop-filter: blur(2px) saturate(50%);
 }
 
 @keyframes background {
@@ -45,7 +33,7 @@ body {
 /* Section Properties */
 
 section {
-    min-height: 100vh;
+
     margin-left: 20%;
 }
 
@@ -155,6 +143,7 @@ section {
 .nav {
     width: 18%;
     height: 100%;
+    min-height: 100vh;
     background-color: #000000;
     position: fixed;
     display: flex;
@@ -372,6 +361,7 @@ section {
     }
 }
 
+
 /* About --------------------------------------------- */
     .about-content-top {
         top: 22vh;
@@ -507,81 +497,143 @@ section {
         top: 12vh;
     }
 }
-</style>
 
-</head>
 
-<body>
-    <div class="container">
-        <div id="particles-js"></div>
-        
-        
-        <!-- Navigation ------------------------------------------------------>
-        <div class="navbar-background">
-            <a href="index.html">
-                <span class="title nav-title">Bingster
-              </span>
-            </a>
-            <div class="menu-bars" onclick="Toggle()">
-                <i class="fab fa-bars fa"></i>
-            </div>
-        </div>
 
-        <nav class="nav" id="nav">
-            <ul onclick="Toggle()">
-                <li class="display-picture">
-                <li><a href="/">Home</a></li>
-                <li><a href="/blog">Blog</a></li>
-                <li><a href="/projects">Projects</a></li>
-                <li><a href="/message">Message</a></li>
-              
-            </ul>
-        </nav>
-       
-       
-        <section id="about">
-            <ul class="social-icons">
-                    <li class="icons">
-                        <a href="https://github.com/b1ngster/" target="_blank" rel="noopener" title="Github">
-                            <span class="fa-layers-fa-fw">
-                            <i class="fas fa-circle circle red"></i>
-                            <i class="fab fa-github fa-inverse social-icon"></i>
-                        </span>
-                        </a>
-                    </li>
-                    <li class="icons">
-                        <a href="https://twitter.com/_bingster_/" target="_blank" rel="noopener" title="Twitter">
-                            <span class="fa-layers-fa-fw">
-                            <i class="fas fa-circle circle red"></i>
-                            <i class="fab fa-twitter fa-inverse social-icon"></i>
-                        </span>
-                        </a>
-                    </li>
-                    <li class="icons">
-                        <a href="https://www.linkedin.com/in/garyblackpool/" target="_blank" rel="noopener" title="Linkedin">
-                            <span class="fa-layers-fa-fw">
-                            <i class="fas fa-circle circle red"></i>
-                            <i class="fab fa-linkedin-in fa-inverse social-icon"></i>
-                        </span>
-                        </a>
-                    </li><br>
-                </ul>
-            </div>
-        </section>
-        <!-- Experience ------------------------------------------------------>
-        
-        </section>
-        <!-- Javascript -->
-        <script>
-            function Toggle() {
-                var x = document.getElementById("nav");
-                if (x.className === "nav") {
-                    x.className += " nav-expand";
-                } else {
-                    x.className = "nav";
-                }
-            }
-        </script>
-</body>
 
-</html>
+
+.display-picture{
+  background-image: url('/img/cuban_yeti_round_150.png');
+  height:150px;
+  width:150px;
+  position:absolute;
+  top:5em;
+  margin-right:2em;
+
+}
+
+.project-container{
+    width: 100%;
+   display: grid;
+    gap:3em;
+    grid-template-columns: repeat(1, 1fr);
+}
+.project  {
+  display:;
+  padding: 2em;
+  margin: 10%;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(248,248,248);
+  border-radius: 20px;
+}
+
+.card.neumorphism {
+  box-shadow: -20px -20px 60px rgba(0,0,0,0.35) inset,
+    10px 10px 20px rgba(0,0,0,0.25);
+}
+
+.card.glassmorphism {
+  background-color: rgba(248,248,248,0.05);
+  -webkit-backdrop-filter: blur(2px) saturate(50%);
+  backdrop-filter: blur(2px) saturate(50%);
+  box-shadow: 4px 4px 16px rgba(255,255,255,0.2) inset,
+  -1px -1px 0 rgba(0,0,0,0.2) inset,
+  0 0 1px 0.25px rgba(255,255,255,0.5) inset,
+  12px 12px 48px rgba(0,0,0,0.5);
+}
+
+.card.claymorphism {
+  box-shadow: 12px 8px 16px rgba(0,0,0,0.2) inset,
+    -12px -8px 26px rgba(0,0,0,0.4) inset,
+    0 0 2px 0 rgba(0,0,0,0.5) inset,
+    12px 12px 48px rgba(0,0,0,0.5);
+}
+
+.project > span {
+  font-family: Roboto, Arial, sans-serif;
+  font-weight: bold;
+  line-height: 300%;
+  text-align: center;
+  text-transform: lowercase;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+}
+
+.project-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-color: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.project {
+  display: flex;
+  align-items: center;
+}
+
+.project h1 {
+  margin: 0;
+  flex-grow: 1;
+}
+
+.project span {
+  margin-left: auto;
+}
+
+.project span a {
+  float:right;
+  margin-left: 10px;
+}
+
+table{
+margin-top: 15%;
+width: 40em;
+}
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    margin: 10px 0;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+    padding: 5px;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+#pages {
+      position: fixed;
+      top: 40%;
+      left: 0;
+      width: 100%;
+      height: 20%;
+      background-color: rgba(0, 0, 0, 0.9);
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+    }
+
+    #overlay-content {
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+    }
